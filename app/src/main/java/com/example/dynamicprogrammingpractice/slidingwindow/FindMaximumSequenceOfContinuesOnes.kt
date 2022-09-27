@@ -5,6 +5,13 @@ fun main() {
     print(findMaximumSequenceOfContinuesOnes(intArray))
 }
 
+/**
+ * It takes an array of integers, and returns the index of the last zero in the array
+ *
+ * @param intArray The array of integers that we want to find the maximum sequence of continues ones
+ * in.
+ * @return The index of the last zero in the array.
+ */
 fun findMaximumSequenceOfContinuesOnes(intArray: IntArray): Int {
     var subArray = intArrayOf()
     var zeroCountIntList = 0

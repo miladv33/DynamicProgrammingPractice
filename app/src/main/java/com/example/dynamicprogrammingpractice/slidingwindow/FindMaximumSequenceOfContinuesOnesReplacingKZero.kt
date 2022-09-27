@@ -19,6 +19,17 @@ fun main() {
  * @param k number of zeros to be replaced
  * @return The maximum sum of a subarray of size k
  */
+/**
+ * We keep a running subarray of the input array, and keep track of the first zero index in the
+ * subarray. When the number of zeros in the subarray is equal to k, we calculate the sum of the
+ * subarray and compare it to the maximum sum we've seen so far. When the number of zeros in the
+ * subarray is equal to k + 1, we remove the first zero from the subarray and update the first zero
+ * index
+ *
+ * @param nums an array of integers
+ * @param k the number of zeros you can replace
+ * @return The maximum sum of a subarray of size k
+ */
 fun findMaximumSequenceOfContinuesOnesReplacingKZero(nums: IntArray, k: Int): Int {
     var subArray = intArrayOf()
     var maxSubArray = 0

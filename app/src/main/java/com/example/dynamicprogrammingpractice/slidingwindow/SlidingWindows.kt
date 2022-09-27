@@ -6,6 +6,13 @@ fun main() {
 }
 
 
+/**
+ * We start with the sum of the first 5 elements, then we subtract the first element and add the 6th
+ * element, and we keep doing this until we reach the end of the array.
+ *
+ * @param arrayList The arrayList of integers to be evaluated
+ * @return The largest sum of 5 consecutive elements in the array.
+ */
 fun slidingWindow(arrayList: ArrayList<Int>): Int {
     if (arrayList.size < 5) return -1
     var currSum = arrayList.subList(0, 4).sum()
