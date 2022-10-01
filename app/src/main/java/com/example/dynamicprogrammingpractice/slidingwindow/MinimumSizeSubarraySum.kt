@@ -43,6 +43,7 @@ fun minSubArrayLen(target: Int, nums: IntArray): Int {
 }
 
 
+
 /**
  * We use a sliding window, with left and right pointers. We add elements from the right pointer and
  * subtract elements from the left pointer to get the sum within the window. If the sum is greater than

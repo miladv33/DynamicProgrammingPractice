@@ -5,10 +5,10 @@ import java.util.Collections.min
 //https://leetcode.com/problems/minimum-window-substring/
 
 fun main() {
-//    println(minWindow("ADOBECODEBANC", "ABC") == "BANC")
-//    println(minWindow("a", "a") == "a")
-//    println(minWindow("a", "") == "")
-    minWindow("AGNBCABNMOBQANC", "ABC")
+    println(minWindow("ADOBECODEBANC", "ABC") == "BANC")
+    println(minWindow("a", "aa") == "a")
+    println(minWindow("a", "") == "")
+//    minWindow("AGNBCABNMOBQANC", "ABC")
 }
 
 fun minWindow(string: String, target: String): String {

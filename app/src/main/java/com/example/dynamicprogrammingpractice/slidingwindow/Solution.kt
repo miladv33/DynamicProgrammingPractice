@@ -4,27 +4,40 @@ import androidx.annotation.RequiresApi
 import android.os.Build
 import java.util.HashMap
 
+@RequiresApi(Build.VERSION_CODES.N)
+fun main() {
+    val solution = Solution()
+    println(solution.minWindow("AGNBCABNMOBQANC", "ABC"))
+}
+
 internal class Solution {
-    @RequiresApi(api = Build.VERSION_CODES.N)
+
+    /**
+     * We keep expanding the window to the right until we get a desirable window i.e. a window that
+     * contains all the characters of t. Then we contract (if possible) and save the smallest window
+     * till now. Then, we keep expanding the window again
+     *
+     * @param s The string to be searched in.
+     * @param t the string that contains all the characters of the desired minimum window in it.
+     * @return The smallest window in s which has all the characters in t.
+     */
+    @RequiresApi(Build.VERSION_CODES.N)
     fun minWindow(s: String, t: String): String {
-        if (s.length == 0 || t.length == 0) {
+        if (s.isEmpty() || t.isEmpty()) {
             return ""
         }
-
         // Dictionary which keeps a count of all the unique characters in t.
         val dictT: MutableMap<Char, Int> = HashMap()
-        for (i in 0 until t.length) {
+        for (i in t.indices) {
             val count = dictT.getOrDefault(t[i], 0)
             dictT[t[i]] = count + 1
         }
-
         // Number of unique characters in t, which need to be present in the desired window.
         val required = dictT.size
 
         // Left and Right pointer
         var l = 0
         var r = 0
-
         // formed is used to keep track of how many unique characters in t
         // are present in the current window in its desired frequency.
         // e.g. if t is "AABC" then the window must have two A's, one B and one C.
